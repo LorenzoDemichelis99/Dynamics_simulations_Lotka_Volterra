@@ -5,7 +5,7 @@
 # T: the number of time steps
 # Δ: the time step
 
-function simulation_Lotka_Volterra(G::SimpleGraph, T::Int64, Δ::Float64, x_0::Function, m::Float64, γ::Float64, σ::Float64, K::Int64)
+function simulation_Lotka_Volterra(G::SimpleGraph, T::Int64, Δ::Float64, x_0::Function, m::Float64, γ::Float64, σ::Float64, K::Int64, thres::Float64)
     # initialization
     sim = simulation_data_Lotka_Volterra(G, T, Δ, m, γ, σ, K, x_0)
     N = nv(G)
@@ -23,6 +23,10 @@ function simulation_Lotka_Volterra(G::SimpleGraph, T::Int64, Δ::Float64, x_0::F
             end
 
             sim.x[i,t] = exp(logx)
+
+            if sim.x[i,t] < thres
+                sim.x[i,t] = 0
+            end
 
             logx = 0.0
         end
