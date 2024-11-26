@@ -3,7 +3,7 @@
 ## Structure of the files
 
 This repository contains a Jupyter notebook and some Julia files to implement the simulation of the random Lotka-Volterra model on a generic graph. 
-The file structure is the following: simulation_data_Lotka_Volterra.jl contains the code that defines the mutable struct used to store all the important information about the simulation and the code, together with the constructor of the struct and the functions that initialize the relevant quantities of the simulation; simulation_Lotka_Volterra.jl contains the function implementing the actual simulation; simulation_tools_Lotka_Volterra.jl contains all the utility functions required to plot and save the results of the simulation.
+The file structure is the following: simulation_data_Lotka_Volterra.jl contains the code that defines the mutable struct used to store all the important information about the simulation and the code, together with the constructor of the struct and the functions that initialize the relevant quantities of the simulation; simulation_Lotka_Volterra.jl contains the function implementing the actual simulation; simulation_tools_Lotka_Volterra.jl contains some of the small functions required to implement the algorithm and all the utility functions required to plot and save the results of the simulation.
 
 
 ## Dynamics implemented on the graph
